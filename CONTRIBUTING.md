@@ -46,7 +46,34 @@ pip install git+https://github.com/mkdocs/mkdocs.git
 
 ## Installing for Development
 
-Note that for development you can just use [Hatch] directly as described below. If you wish to install a local clone of MkDocs anyway, you can run `pip install --editable .`. It is **strongly** recommended that you do this within a [virtualenv].
+Note that for development you can just use [Hatch] directly as described below. If you wish to install a local clone of MkDocs anyway, use an editable install in a [virtualenv].
+
+First, create a virtual environment from the root of the cloned repository:
+
+```bash
+python -m venv .venv
+```
+
+Activate it on macOS or Linux:
+
+```bash
+source .venv/bin/activate
+```
+
+Or activate it in Windows PowerShell:
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+Then install the local source and confirm that the `mkdocs` command uses it:
+
+```bash
+python -m pip install --editable .
+mkdocs --version
+```
+
+When you are finished working in the environment, run `deactivate`.
 
 ## Installing Hatch
 
